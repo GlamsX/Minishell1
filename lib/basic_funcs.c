@@ -11,6 +11,8 @@ char *my_strcpy(char *dest, char *src)
 {
     int i = 0;
 
+    if (!dest || !src)
+        return (NULL);
     for (; src[i]; i++)
         dest[i] = src[i];
     dest[i] = '\0';
@@ -19,7 +21,11 @@ char *my_strcpy(char *dest, char *src)
 
 char *my_strdup(char *str)
 {
-    char *new = malloc(sizeof(char) * my_strlen(str) + 1);
+    char *new = NULL;
+
+    if (!str)
+        return (NULL);
+    new = malloc(sizeof(char) * my_strlen(str) + 1);
     if (new != NULL) {
         my_strcpy(new, str);
         return (new);
@@ -29,6 +35,8 @@ char *my_strdup(char *str)
 
 int my_strncmp(char *a, char *b, int size)
 {
+    if (!a || !b)
+        return (1);
     for (int i = 0, j = 0; i != size && j != size; i++, j++) {
         if (a[i] != b[j])
             return (1);

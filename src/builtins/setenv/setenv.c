@@ -41,6 +41,9 @@ int my_setenv(list_t *list, char **input)
 {
     if (!input[1])
         return (my_env(list, input));
-    else
+    else if (strlen_tab(input) > 3) {
+        my_printf("setenv: Too many arguments.\n");
+        return (1);
+    } else
         return (do_setenv(list, input));
 }

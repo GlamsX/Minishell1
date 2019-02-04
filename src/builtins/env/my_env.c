@@ -10,11 +10,8 @@
 int my_env(list_t *list, char **input)
 {
     (void)input;
-    elem_t *elem = list->front;
 
-    while (elem) {
+    for (elem_t *elem = list->front; elem != NULL; elem = elem->next)
         my_printf("%s\n", elem->data);
-        elem = elem->next;
-    }
     return (0);
 }

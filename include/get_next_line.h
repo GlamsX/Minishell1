@@ -9,6 +9,8 @@
 
 #define READ_SIZE (1)
 
+#endif
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,5 +20,3 @@
 #include <fcntl.h>
 
 char *get_next_line(int);
-
-#endif

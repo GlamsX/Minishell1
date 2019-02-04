@@ -43,28 +43,13 @@ char get_char(int fd)
     return (c);
 }
 
-char *read_value(int fd, char *str)
-{
-    char *buff = malloc(sizeof(char) * 4096);
-    int retsize = 0;
-
-    if (fd < 0 || !str)
-        return (NULL);
-    retsize = read(fd, buff, 4096);
-    if (retsize < 1)
-        return (NULL);
-    buff[retsize] = '\0';
-    free(str);
-    return (buff);
-}
-
 char *get_next_line(int fd)
 {
     char *str = malloc(sizeof(char) * (READ_SIZE + 2));
     char c;
 
-    if (fd < 1)
-        return (read_value(fd, str));
+    if (fd < 0)
+        return (NULL);
     if (!str)
         return (NULL);
     c = get_char(fd);

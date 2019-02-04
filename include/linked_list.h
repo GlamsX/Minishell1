@@ -25,16 +25,16 @@ typedef struct list_s
     size_t size;
 } list_t;
 
-elem_t *create_new_elem(char *data);
-void init_list(list_t *list);
-bool push_front(list_t *list, char *data);
-bool push_back(list_t *list, char *data);
-void pop_front(list_t *list);
-void pop_back(list_t *list);
-void print_elem_list(list_t *list);
-int my_strlen_for_list(list_t *list);
-void pop_elem(list_t *list, elem_t *elem);
-bool push_elem(list_t *list, char *data, int pos);
+elem_t *create_new_elem(char *);
+void init_list(list_t *);
+bool push_front(list_t *, char *);
+bool push_back(list_t *, char *);
+void pop_front(list_t *);
+void pop_back(list_t *);
+void print_elem_list(list_t *);
+int my_strlen_for_list(list_t *);
+void pop_elem(list_t *, elem_t *);
+bool push_elem(list_t *, char *, int);
 void free_list(list_t *);
 
 #endif
