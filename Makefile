@@ -25,6 +25,7 @@ SRC	=	lib/basic_funcs.c	\
 		src/free_foncs.c	\
 		src/execution.c	\
 		src/builtins/setenv/exec_setenv.c	\
+		src/check_signals.c	\
 		src/main.c
 
 PRINTF	=	my_printf/src/my_printf.c	\

@@ -93,10 +93,7 @@ void my_printf(char *str, ...)
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == '%') {
             i++;
-            if (str[i] == '%')
-                my_putchar('%');
-            else
-                i = call_flag(str, ap, i);
+            (str[i] == '%') ? my_putchar('%') : (i = call_flag(str, ap, i));
         } else
             my_putchar(str[i]);
     }

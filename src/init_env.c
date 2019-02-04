@@ -29,7 +29,9 @@ char *get_from_env(list_t *list, char *to_get)
 {
     elem_t *elem = list->front;
 
-    while (elem) {
+    if (!elem || !to_get)
+        return (NULL);
+    while (elem != NULL) {
         if (my_strncmp(elem->data, to_get, my_strlen(to_get)) == 0)
             return (elem->data);
         elem = elem->next;

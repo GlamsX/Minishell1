@@ -23,11 +23,12 @@ void change_value_2(char *elem, char *value, list_t *list, int size)
     elem_t *elems = list->front;
     char **tab = get_new_env(list);
 
-    for (int i = 0; tab[i] != NULL; i++)
+    for (int i = 0; tab[i] != NULL; i++) {
         if (my_strncmp(tab[i], elem, size) == 0) {
             tab[i] = concat_elem(elem, value);
             break;
         }
+    }
     while (elems) {
         pop_front(list);
         elems = elems->next;
